@@ -37,9 +37,13 @@ const App: React.FC = () => {
   }, [])
 
   return (
-    <video controls id="video">
-      <source src={porcheVideo} type="video/mp4"/>
-    </video>
+    <div style={{ height: '100vh', width: '100vw', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'black'}}>
+      <div style={{ position: 'relative' }}>
+        <video controls id="video">
+          <source src={porcheVideo} type="video/mp4"/>
+        </video>
+      </div>
+    </div>
   );
 }
 
