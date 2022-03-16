@@ -6,6 +6,10 @@ This project is a test to Aive ( Aive Boxes Challenges )
 
 In the project directory, you can run:
 
+### `yarn`
+
+Run to install modules
+
 ### `yarn start`
 
 Runs the app in the development mode.\
