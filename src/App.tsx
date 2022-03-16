@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import porcheVideo from './assets/porshe.mp4';
 import dataPositionObject from './assets/porshe-video-object-detections.json';
@@ -20,6 +20,21 @@ const App: React.FC = () => {
       });
     })
   });
+
+  const videoListener = (e: any): void => {
+    const time = e.target.currentTime * 1000;
+    console.log('time', time);
+  };
+
+  useEffect(() => {
+    const video = document.querySelector('video');
+    video && video.addEventListener('timeupdate', videoListener);
+    
+    return () => {
+      const video = document.querySelector('video');
+      video && video.removeEventListener('timeupdate', videoListener);
+    }
+  }, [])
 
   return (
     <video controls id="video">
